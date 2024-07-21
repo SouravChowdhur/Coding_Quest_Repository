@@ -1,0 +1,23 @@
+int print2largest(vector<int> &arr) {
+        // Code Here
+          if(arr.size()==1)
+         {
+             return -1;
+         }
+        int n = arr.size();
+        int firstLargest = -1;
+        int secondLargest = -1;
+        
+        for(int i=0; i<n; i++){
+            if(arr[i] > firstLargest && arr[i] > secondLargest){
+                secondLargest = firstLargest;
+                firstLargest = arr[i];
+            }
+            else if(arr[i] > secondLargest && firstLargest > arr[i]){
+                secondLargest = arr[i];
+            }
+        }
+       
+        return secondLargest;
+    }
+};
