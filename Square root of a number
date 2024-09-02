@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    long long int floorSqrt(long long int n) {
+        // Your code goes here
+        int ans = 1;
+        long long low = 1;
+        long long high = n;
+        long long int mid = low + (high - low)/2;
+        while(low <= high){
+            if(mid*mid <= n){
+                ans = mid;
+                low = mid + 1;
+            }
+            else{
+                high = mid - 1;
+            }
+            mid = low + (high - low)/2;
+        }
+        return ans;
+    }
+};
